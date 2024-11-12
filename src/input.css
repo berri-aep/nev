@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply font-poppins;
+    }
+
+    .container{
+        @apply max-w-[1600px] w-full px-[1.5rem] mx-auto;
+    }
+}
+
+@layer components{
+    /* header */
+    .logo span{
+        @apply text-primary
+    }
+
+    .toggle__menu{
+        @apply flex flex-col gap-1 z-50 lg:hidden md:hidden;
+    }
+    .toggle__menu span{
+        @apply content-[*] bg-primary w-10 h-2 rounded-lg duration-700 ease-out;
+    }
+
+    .header__nav li{
+        @apply border-b-2 px-[2rem] py-[2rem] w-[100%] text-left lg:border-none;
+    }
+
+    .header__nav{
+        @apply transition-all duration-700 ease-out;
+    }
+
+    .header__nav.open{
+        @apply right-0 transition-all duration-700 ease-out;
+    }
+
+    .toggle__menu{
+        @apply transition-all duration-700;
+    }
+
+    .toggle__menu.open {
+        @apply -translate-y-4 transition-all duration-700;
+    }
+
+    .toggle__menu.open span:first-child{
+    @apply rotate-[225deg] translate-y-6 rounded-md transition-all duration-700;
+  }
+
+  .toggle__menu.open span:nth-child(2){
+    @apply opacity-0 transition-all duration-700;
+  }
+
+  .toggle__menu.open span:last-child{
+    @apply -rotate-[225deg] rounded-md transition-all duration-700;
+  }
+    
+    .nav__active{
+        @apply relative;
+    }
+
+    .nav__active::after{
+        @apply  hidden h-[0.6rem] bg-primary w-[100%] lg:block absolute content-[""] rounded-md left-0 -bottom-[0.6rem];
+    }
+
+    /* HOMEBANNER CARDS */
+    .homeBanner__cards--details p{
+        @apply text-white w-[20rem];
+    }
+
+    .homeBanner__cards.active::after{
+        @apply hidden h-[0.7rem] bg-primary w-[100%] lg:block absolute content-[""] rounded-md left-0 -bottom-[0.4rem];
+    }
+
+    .homeBanner__cards a{
+        @apply font-bold;
+    }
+
+
+    .bg-grad{
+        @apply z-0 bg-gradientt  absolute w-[100%] h-[10rem] lg:bottom-0;
+    }
+    .bg-grad_top{
+        @apply z-0 bg-gradientt2  absolute w-[100%] h-[20rem] top-0;
+    }
+
+    .bg-grad_top--blck{
+        @apply z-0 bg-gradient_black absolute w-[100%] h-[3rem] top-0;
+    }
+
+    /* DISCOVER */
+    .discover__content--left i{
+        @apply text-4xl items-center;
+    }
+
+    /* FOOTER */
+    .footer__top--links2 li, .footer__top--links2 p{
+        @apply text-white
+    }
+    .footer__social li{
+        @apply text-primary text-3xl;
+    }
+
+    /* BUTTONS */
+    .btn{
+        @apply py-2 px-4 bg-transparent border-transparent rounded-xl shadow-[0_8px_24px_-15px_rgba(149,157,165,0.2)];
+    }
+
+    .btn.bg--primaryy{
+        @apply bg-primary rounded-md text-secondary hover:bg-[#fbad17];
+    }
+
+    .btn.bg--primaryy2{
+        @apply bg-transparent rounded-md text-primary border border-primary hover:bg-[#fbad17] hover:text-secondary;
+    }
+}
